@@ -125,13 +125,12 @@ void handle_key(char key) {
     }
 
     if (!input_ready) {
-        input_buffer_position = input_buffer_position + 1;
         if (input_buffer_position < sizeof(input_buffer) ) {
             input_buffer[input_buffer_position] = key;
         } else {
             input_ready = true;
         }
-
+        input_buffer_position = input_buffer_position + 1;
     }
 
     if (input_ready) {
